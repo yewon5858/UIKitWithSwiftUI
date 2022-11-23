@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rWy-ex-4A0">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pMB-qA-jog">
+            <objects>
+                <navigationController id="rWy-ex-4A0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0rZ-ob-MKD">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LWO-9a-LaI" kind="relationship" relationship="rootViewController" id="0Ht-z6-Cwu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIr-XX-RrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="-1420"/>
+        </scene>
+        <!--ViewController-->
+        <scene sceneID="a32-hD-6iR">
+            <objects>
+                <viewController id="LWO-9a-LaI" userLabel="ViewController" customClass="ViewController" customModule="UIKitWithSwiftUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cke-wX-3nG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DgY-Op-U9i">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="YJK-nT-nbE">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YJK-nT-nbE" id="6H0-e9-gwD" customClass="MyTableViewCell" customModule="UIKitWithSwiftUI" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <connections>
+                                                <outlet property="cellView" destination="YJK-nT-nbE" id="u6t-Dp-rai"/>
+                                            </connections>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-XI-z4L">
+                                <rect key="frame" x="159" y="103" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showSwiftUIView:" destination="gHd-S7-r8W" eventType="touchUpInside" id="G9v-xJ-mGn"/>
+                                    <segue destination="Mtj-6a-Li0" kind="show" destinationCreationSelector="showSwiftUIView:" id="yYA-rs-JCY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="afs-32-jXo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DgY-Op-U9i" secondAttribute="bottom" id="Rgt-Rf-qcq"/>
+                            <constraint firstItem="DgY-Op-U9i" firstAttribute="top" secondItem="afs-32-jXo" secondAttribute="top" id="Zrt-0o-Iih"/>
+                            <constraint firstItem="cPC-XI-z4L" firstAttribute="top" secondItem="afs-32-jXo" secondAttribute="top" id="c2U-kW-8Xd"/>
+                            <constraint firstItem="DgY-Op-U9i" firstAttribute="leading" secondItem="afs-32-jXo" secondAttribute="leading" id="hfk-F6-aC2"/>
+                            <constraint firstItem="cPC-XI-z4L" firstAttribute="centerX" secondItem="Cke-wX-3nG" secondAttribute="centerX" id="imq-t6-OGV"/>
+                            <constraint firstItem="afs-32-jXo" firstAttribute="trailing" secondItem="DgY-Op-U9i" secondAttribute="trailing" id="sur-by-639"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="pwO-1w-pZL"/>
+                    <connections>
+                        <outlet property="tableView" destination="DgY-Op-U9i" id="zCi-k1-Tp7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="weK-RT-wm8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gHd-S7-r8W" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="812.97709923664115" y="-1420.4225352112676"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="pWD-wA-ykB">
+            <objects>
+                <hostingController id="Mtj-6a-Li0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zGb-Lx-aSd"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxk-zM-kOc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="-1424"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
